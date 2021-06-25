@@ -2,17 +2,17 @@ from selenium.webdriver.common.by import By
 
 
 class LoginPageLocators:
-    register_form = '#register_form'
-    login_form = '#login_form'
+    REGISTER_FORM = (By.CSS_SELECTOR, '#register_form')
+    LOGIN_FORM = (By.CSS_SELECTOR, '#login_form')
 
 
 class ProductPageLocators:
-    add_to_basket_button = "#add_to_basket_form button[type='submit']"
-    product_name = "article.product_page h1"
-    product_price = "article.product_page p.price_color"
-    alert_product_name = "#messages :nth-child(1) strong"
-    alert_basket_total = "#messages :nth-child(3) strong"
-    success_message = "#messages :nth-child(1) .alertinner"
+    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, "#add_to_basket_form button[type='submit']")
+    PRODUCT_NAME = (By.CSS_SELECTOR, "article.product_page h1")
+    PRODUCT_PRICE = (By.CSS_SELECTOR, "article.product_page p.price_color")
+    ALERT_PRODUCT_NAME = (By.CSS_SELECTOR, "#messages :nth-child(1) strong")
+    ALERT_BASKET_TOTAL = (By.CSS_SELECTOR, "#messages :nth-child(3) strong")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages :nth-child(1) .alertinner")
 
 
 class BasePageLocators():

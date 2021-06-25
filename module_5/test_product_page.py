@@ -8,7 +8,7 @@ from .pages.basket_page import BasketPage
 class TestProductPage:
     link_promo_product_base = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo='
     link_product = 'http://selenium1py.pythonanywhere.com/catalogue/the-city-and-the-stars_95/'
-g
+
     @pytest.mark.parametrize('promo_offer',
                              ["offer0", "offer1", "offer2", "offer3", "offer4", "offer5", "offer6",
                               pytest.param("offer7", marks=pytest.mark.xfail),
