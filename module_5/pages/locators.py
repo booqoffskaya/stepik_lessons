@@ -9,4 +9,4 @@ class ProductPageLocators:
     product_price = "article.product_page p.price_color"
     alert_product_name = "#messages :nth-child(1) strong"
     alert_basket_total = "#messages :nth-child(3) strong"
-    #basket_total = "div.basket-mini"
+

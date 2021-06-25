@@ -15,9 +15,6 @@ class ProductPage(BasePage):
     def get_product_price(self):
         return self.browser.find_element(By.CSS_SELECTOR, ProductPageLocators.product_price).text
 
-    def get_basket_total(self):
-        return self.browser.find_element(By.CSS_SELECTOR, ProductPageLocators.basket_total).text
-
     def check_name_of_added_product(self, name):
         assert name == self.browser.find_element(By.CSS_SELECTOR, ProductPageLocators.alert_product_name).text
 
