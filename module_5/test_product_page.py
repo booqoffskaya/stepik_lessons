@@ -2,12 +2,13 @@ import pytest
 import time
 from .pages.product_page import ProductPage
 from .pages.login_page import LoginPage
+from .pages.basket_page import BasketPage
 
 
 class TestProductPage:
     link_promo_product_base = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo='
     link_product = 'http://selenium1py.pythonanywhere.com/catalogue/the-city-and-the-stars_95/'
-
+g
     @pytest.mark.parametrize('promo_offer',
                              ["offer0", "offer1", "offer2", "offer3", "offer4", "offer5", "offer6",
                               pytest.param("offer7", marks=pytest.mark.xfail),
@@ -54,3 +55,11 @@ class TestProductPage:
         login_page = LoginPage(browser, browser.current_url)
         login_page.should_be_login_page()
 
+    def test_guest_cant_see_product_in_basket_opened_from_product_page(self, browser):
+        page = ProductPage(browser, self.link_product)
+        page.open()
+        page.go_to_basket_page()
+        basket_page = BasketPage(browser, browser.current_url)
+        basket_page.should_be_basket_page()
+        basket_page.should_be_empty_basket_text()
+        basket_page.should_not_be_basket_items()
