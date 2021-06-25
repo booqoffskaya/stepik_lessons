@@ -20,3 +20,11 @@ class ProductPage(BasePage):
 
     def check_basket_total_price(self, price):
         assert price == self.browser.find_element(By.CSS_SELECTOR, ProductPageLocators.alert_basket_total).text
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(By.CSS_SELECTOR, ProductPageLocators.success_message), \
+           "Success message is presented, but should not be"
+
+    def should_not_be_success_message_after_timeout(self):
+        assert self.is_disappeared(By.CSS_SELECTOR, ProductPageLocators.success_message), \
+            "Success message is presented, but should not be"
