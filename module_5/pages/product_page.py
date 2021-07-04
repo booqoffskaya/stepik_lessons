@@ -16,10 +16,12 @@ class ProductPage(BasePage):
         return self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
 
     def check_name_of_added_product(self, name):
-        assert name == self.browser.find_element(*ProductPageLocators.ALERT_PRODUCT_NAME).text
+        assert name == self.browser.find_element(*ProductPageLocators.ALERT_PRODUCT_NAME).text, \
+            "The name of the added product does not match the expected name"
 
     def check_basket_total_price(self, price):
-        assert price == self.browser.find_element(*ProductPageLocators.ALERT_BASKET_TOTAL).text
+        assert price == self.browser.find_element(*ProductPageLocators.ALERT_BASKET_TOTAL).text, \
+            "The basket total price does not match the expected total price"
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \

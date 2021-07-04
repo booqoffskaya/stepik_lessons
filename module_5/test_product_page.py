@@ -63,3 +63,36 @@ class TestProductPage:
         basket_page.should_be_basket_page()
         basket_page.should_be_empty_basket_text()
         basket_page.should_not_be_basket_items()
+
+
+class TestUserAddToBasketFromProductPage:
+    link = 'http://selenium1py.pythonanywhere.com/en-gb/catalogue/coders-at-work_207/?promo=offer0'
+
+    @pytest.fixture(scope="function", autouse=True)
+    def setup(self, browser):
+        page = ProductPage(browser, self.link)
+        page.open()
+        page.go_to_login_page()
+        login_page = LoginPage(browser, browser.current_url)
+        email = str(time.time()) + "@fakemail.org"
+        password = str(time.time())
+        login_page.register_new_user(email, password)
+
+
+    def test_user_cant_see_success_message(self, browser):
+        page = ProductPage(browser, self.link)
+        page.open()
+        page.should_not_be_success_message()
+
+    def test_user_can_add_product_to_basket(self, browser):
+        page = ProductPage(browser, self.link)
+        page.open()
+        product_name = page.get_product_name()
+        product_price = page.get_product_price()
+        page.add_to_basket()
+        print('lol')
+        page.solve_quiz_and_get_code()
+        print('lol1')
+        page.check_name_of_added_product(product_name)
+        print('lol2')
+        page.check_basket_total_price(product_price)
