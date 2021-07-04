@@ -1,0 +1,112 @@
+{
+  "uid" : "f08b72761cb5ab8e",
+  "name" : "test_guest_can_add_product_to_basket[offer7]",
+  "fullName" : "module_5.test_product_page.TestProductPage#test_guest_can_add_product_to_basket",
+  "historyId" : "8433857a769ecd2ca3eba03399b040cb",
+  "time" : {
+    "start" : 1625393358079,
+    "stop" : 1625393361947,
+    "duration" : 3868
+  },
+  "status" : "skipped",
+  "statusMessage" : "XFAIL\n\nAssertionError: The name of the added product does not match the expected name",
+  "statusTrace" : "self = <module_5.test_product_page.TestProductPage object at 0x7ff2cabb7550>, browser = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"79685fdf0e7f24731d51c10291d0fea3\")>, promo_offer = 'offer7'\n\n    @pytest.mark.parametrize('promo_offer',\n                             [\"offer0\", \"offer1\", \"offer2\", \"offer3\", \"offer4\", \"offer5\", \"offer6\",\n                              pytest.param(\"offer7\", marks=pytest.mark.xfail),\n                              \"offer8\", \"offer9\"])\n    def test_guest_can_add_product_to_basket(self, browser, promo_offer):\n        promo_link = self.link_promo_product_base + promo_offer\n        page = ProductPage(browser, promo_link)\n        page.open()\n        product_name = page.get_product_name()\n        product_price = page.get_product_price()\n        page.add_to_basket()\n        page.solve_quiz_and_get_code()\n>       page.check_name_of_added_product(product_name)\n\nmodule_5/test_product_page.py:24: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <module_5.pages.product_page.ProductPage object at 0x7ff2cabbfee0>, name = 'Coders at Work'\n\n    def check_name_of_added_product(self, name):\n>       assert name == self.browser.find_element(*ProductPageLocators.ALERT_PRODUCT_NAME).text, \\\n            \"The name of the added product does not match the expected name\"\nE       AssertionError: The name of the added product does not match the expected name\n\nmodule_5/pages/product_page.py:19: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "browser",
+    "time" : {
+      "start" : 1625393356480,
+      "stop" : 1625393358072,
+      "duration" : 1592
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "skipped",
+    "statusMessage" : "XFAIL\n\nAssertionError: The name of the added product does not match the expected name",
+    "statusTrace" : "self = <module_5.test_product_page.TestProductPage object at 0x7ff2cabb7550>, browser = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"79685fdf0e7f24731d51c10291d0fea3\")>, promo_offer = 'offer7'\n\n    @pytest.mark.parametrize('promo_offer',\n                             [\"offer0\", \"offer1\", \"offer2\", \"offer3\", \"offer4\", \"offer5\", \"offer6\",\n                              pytest.param(\"offer7\", marks=pytest.mark.xfail),\n                              \"offer8\", \"offer9\"])\n    def test_guest_can_add_product_to_basket(self, browser, promo_offer):\n        promo_link = self.link_promo_product_base + promo_offer\n        page = ProductPage(browser, promo_link)\n        page.open()\n        product_name = page.get_product_name()\n        product_price = page.get_product_price()\n        page.add_to_basket()\n        page.solve_quiz_and_get_code()\n>       page.check_name_of_added_product(product_name)\n\nmodule_5/test_product_page.py:24: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <module_5.pages.product_page.ProductPage object at 0x7ff2cabbfee0>, name = 'Coders at Work'\n\n    def check_name_of_added_product(self, name):\n>       assert name == self.browser.find_element(*ProductPageLocators.ALERT_PRODUCT_NAME).text, \\\n            \"The name of the added product does not match the expected name\"\nE       AssertionError: The name of the added product does not match the expected name\n\nmodule_5/pages/product_page.py:19: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "7363b7d1cb462e82",
+      "name" : "stdout",
+      "source" : "7363b7d1cb462e82.txt",
+      "type" : "text/plain",
+      "size" : 76
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "browser::0",
+    "time" : {
+      "start" : 1625393361969,
+      "stop" : 1625393362027,
+      "duration" : 58
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail"
+  }, {
+    "name" : "parentSuite",
+    "value" : "module_5"
+  }, {
+    "name" : "suite",
+    "value" : "test_product_page"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestProductPage"
+  }, {
+    "name" : "host",
+    "value" : "lulavm"
+  }, {
+    "name" : "thread",
+    "value" : "24749-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "module_5.test_product_page"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "promo_offer",
+    "value" : "'offer7'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "@pytest.mark.xfail" ]
+  },
+  "source" : "f08b72761cb5ab8e.json",
+  "parameterValues" : [ "'offer7'" ]
+}
